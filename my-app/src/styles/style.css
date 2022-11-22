@@ -1,0 +1,209 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  padding-top: 25px;
+  margin: auto;
+  width: 90%;
+  max-width: 1225px;
+}
+
+header img {
+  height: 70%;
+}
+
+nav {
+  font-size: large;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App {
+  margin: auto;
+  width: 90%;
+  height: 223px;
+}
+
+.container-banner {
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1230px;
+  height: 100%;
+  margin: auto;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  filter: brightness(50%);
+}
+
+.bannerText {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: rgb(255, 255, 255);
+}
+
+.AllCard {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.AppartementCard {
+  width: 340px;
+  height: 340px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+}
+.AppartementCard_title {
+  color: rgb(255, 255, 255);
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 45%;
+  z-index: 3;
+}
+.AppartementCard::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(#ffffff 0%, #000000 50%);
+  opacity: 0.5;
+  content: " ";
+}
+
+.AppartementCard img {
+  width: 100%;
+  object-fit: cover;
+}
+
+footer {
+  margin-top: 25px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p {
+  color: white;
+}
+
+footer img {
+  width: 122px;
+  filter: brightness(10);
+  padding-top: 25px;
+}
+
+@media screen and (max-width: 376px) {
+  .bannerText {
+    font-size: 24px;
+  }
+  .AppartementCard {
+    width: 335px;
+    height: 255px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  .AppartementCard__title {
+    color: black;
+    z-index: 0;
+  }
+}
+.collapse {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.collapse button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ff6060;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.collapse_individuel {
+  width: 100%;
+}
+.collapse_text {
+  padding: 10px;
+  margin-left: 15px;
+  background-color: beige;
+  color: #ff6060;
+  font-size: 25px;
+}
+.error {
+  color: #ff6060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error_number {
+  font-size: 150px;
+  font-weight: bolder;
+  margin-bottom: 25px;
+}
+.error_text {
+  font-size: 50px;
+}
+
+.Productsheet_Description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.collapse_individuel {
+  width: 40%;
+  margin: auto;
+}
+
+.collapse_button {
+  background-color: #ff6060;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
