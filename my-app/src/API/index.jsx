@@ -5,7 +5,7 @@ export default function GetData(urlApi) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/logements.json").then((res) => setData(res.data));
+    fetch(urlApi).then((res) => setData(res.data));
   }, []);
   return Response;
 }
