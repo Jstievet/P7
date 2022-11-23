@@ -6,10 +6,11 @@ import './styles/style.css';
 import Home from './pages/Home';
 import Productsheet from './pages/Productsheet'
 import Apropos from './pages/Apropos'
-import Header from './components/Header';
-import Footer from './components/Footer/index';
 import Error from './components/Error';
+// import Layout from './components/Layout/index'
 import reportWebVitals from './reportWebVitals';
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,17 +19,16 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
+        {/* <Route path='/' element={<Layout />} > */}
         <Route path="/" element={<Home />} />
         <Route path="/Apropos" element={<Apropos />} />
         <Route path="*" element={<Error />} />
         <Route path="/Productsheet/:id" element={<Productsheet />} />
+        {/* </Route> */}
       </Routes>
       <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

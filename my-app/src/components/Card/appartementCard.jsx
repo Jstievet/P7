@@ -1,11 +1,14 @@
-import GetData from "./../../API/index";
+import { getData } from "./../../API/index";
+import { useEffect, useState } from "react";
 import Card from "./index";
 
 export default function AppartementCard() {
-  const urlApi = "/logement.json";
-  const appartementSheet = GetData(urlApi);
-
-  console.log("test", GetData(urlApi));
+  const [appartementSheet, setAppartementSheet] = useState([]);
+  useEffect(() => {
+    getData().then((data) => {
+      setAppartementSheet(data);
+    });
+  }, []);
 
   return (
     <div className="AllCard">

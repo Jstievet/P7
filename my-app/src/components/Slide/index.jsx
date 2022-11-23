@@ -1,4 +1,4 @@
-function SlideProductsheep(pictures) {
+function SlideProductsheep({ pictures }) {
   return (
     <div className="Slide">
       <img src={pictures} alt="" />

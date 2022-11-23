@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Card({ title, cover, id }) {
-  const LinkID = "/Productsheet/id?=" + id;
+  const LinkID = "/Productsheet/" + id;
 
   return (
     <Link to={LinkID}>
