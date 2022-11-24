@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function ImgSlide() {
-  const [appartementPictures, setAppartementImg] = useState([]);
+  const [appartementPictures, setAppartementPictures] = useState([]);
   const params = useParams();
   const id = params.id;
   useEffect(() => {
     getDataById(id).then((data) => {
-      setAppartementImg(data);
+      setAppartementPictures(data);
     });
   }, []);
 
