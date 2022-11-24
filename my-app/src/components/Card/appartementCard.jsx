@@ -9,7 +9,7 @@ export default function AppartementCard() {
       setAppartementSheet(data);
     });
   }, []);
-
+  console.log(appartementSheet);
   return (
     <div className="AllCard">
       {appartementSheet.map((sheet, index) => (

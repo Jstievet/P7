@@ -1,11 +1,11 @@
 import Collapse from "../components/Collapse";
-import SlideProductsheep from "./../components/Slide/imgSlide";
+import Slide from "./../components/Slide/imgSlide";
 
 function Productsheet() {
   return (
     <div>
       <div className="ContainerSlide">
-        <SlideProductsheep />
+        <Slide />
       </div>
 
       <div className="Productsheet_Description">
