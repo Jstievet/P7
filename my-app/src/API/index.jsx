@@ -13,9 +13,8 @@ export async function getData() {
   }
 }
 // TODO Init getData and find by id
-export async function getDataById(params) {
+export async function getDataById(data, params) {
   try {
-    const data = await getData();
     const response = data.Find(({ id }) => id === params);
     if (response.ok) {
       return await response.json();
