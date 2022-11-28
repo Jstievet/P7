@@ -1,18 +1,29 @@
 import Collapse from "../components/Collapse";
-import Slide from "./../components/Slide/imgSlide";
+import Slide from "../components/Slide";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getDataById } from "./../API/index";
 
 function Productsheet() {
+  const [appartement, setAppartement] = useState([]);
+  const idLocation = useParams();
+  const id = idLocation.id;
+
+  useEffect(() => {
+    getDataById(id).then((data) => {
+      setAppartement(data);
+    });
+  }, [id]);
+  console.log("appartement", appartement);
   return (
-    <div>
-      <div className="ContainerSlide">
-        <Slide />
-      </div>
+    <section className="ContainerSlide">
+      {/* <Slide pictures={appartement.pictures} /> */}
 
       <div className="Productsheet_Description">
         <Collapse title="Description" />
         <Collapse title="Equipements" />
       </div>
-    </div>
+    </section>
   );
 }
 export default Productsheet;

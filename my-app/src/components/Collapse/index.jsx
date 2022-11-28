@@ -14,8 +14,12 @@ function Collapse(props) {
     >
       <div className="collapse_button" onClick={toggle}>
         <div>{title}</div>{" "}
-        <div>
-          <img src={vectorup} alt="" />
+        <div className="vector">
+          <img
+            className={open ? "vector_down" : "vector_up"}
+            src={vectorup}
+            alt=""
+          />
         </div>
       </div>
       <div className="collapse_text">{text}</div>

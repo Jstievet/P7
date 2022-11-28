@@ -4,22 +4,31 @@ import Collapse from "../components/Collapse";
 
 function Apropos() {
   return (
-    <div>
-      <main>
+    <main>
+      <section>
         <div className="App">
           <Banner urlImage={bannerApropos} />
         </div>
         <div className="collapse">
-          <Collapse title="Fiabilité" text="blablablablabla blbablablablabla" />
+          <Collapse
+            title="Fiabilité"
+            text="la bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre plateform"
+          />
           <Collapse
             title="Respect"
             text="la bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre plateform"
           />
-          <Collapse title="Fiabilité" text="blablablablabla blbablablablabla" />
-          <Collapse title="Fiabilité" text="blablablablabla blbablablablabla" />
+          <Collapse
+            title="Fiabilité"
+            text="la bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre plateform"
+          />
+          <Collapse
+            title="Fiabilité"
+            text="la bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entrainera une exclusion de notre plateform"
+          />
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
 export default Apropos;

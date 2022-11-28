@@ -6,22 +6,25 @@ export async function getData() {
     if (response.ok) {
       return await response.json();
     } else {
-      // TODO Lever une exception
+      throw new Error("no data");
     }
   } catch (error) {
     console.error(error);
   }
 }
 // TODO Init getData and find by id
-export async function getDataById(data, params) {
+export async function getDataById(idLocation) {
   try {
-    const response = data.Find(({ id }) => id === params);
-    if (response.ok) {
-      return await response.json();
+    const data = await getData();
+    const dataOne = data.find(({ id }) => id === idLocation);
+    console.log("dataOne", dataOne);
+    if (dataOne) {
+      console.log("if dataOne", dataOne);
+      return dataOne;
     } else {
       // TODO Lever une exception
     }
   } catch (error) {
-    console.error(error);
+    // console.error(error);
   }
 }
