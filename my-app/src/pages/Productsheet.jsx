@@ -17,7 +17,7 @@ function Productsheet() {
   console.log("appartement", appartement);
   return (
     <section className="ContainerSlide">
-      {/* <Slide pictures={appartement.pictures} /> */}
+      <Slide pictures={appartement} />
 
       <div className="Productsheet_Description">
         <Collapse title="Description" />
