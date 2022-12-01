@@ -6,18 +6,20 @@ import { getDataById } from "./../API/index";
 
 function Productsheet() {
   const [appartement, setAppartement] = useState([]);
+  const [pictures, setPictures] = useState([]);
   const idLocation = useParams();
   const id = idLocation.id;
 
   useEffect(() => {
     getDataById(id).then((data) => {
       setAppartement(data);
+      setPictures(data.pictures)
     });
   }, [id]);
-  console.log("appartement", appartement.pictures);
+  // console.log("appartement", appartement);
   return (
     <section className="ContainerSlide">
-      <Slide pictures={appartement} />
+      <Slide pictures={pictures} />
 
       <div className="Productsheet_Description">
         <Collapse title="Description" />

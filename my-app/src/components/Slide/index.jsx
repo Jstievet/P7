@@ -1,29 +1,29 @@
 import { useState } from "react";
 import vectorup from "./../../asset/VectorUp.png";
 
-function Slide(props) {
+function Slide( { pictures }) {
   //définition de l'index de la premiere image à index 0
   const [currentImg, setCurrentImg] = useState(0);
-  const [allPictures, setAllPictures] = useState([]);
-  setAllPictures(props.pictures);
+  const length = pictures.length;
   //définition du nombre d'image comprise dans pictures
-  const lengthPicturesArray = allPictures.length;
-  console.log("lengthpicturearray", lengthPicturesArray);
+  console.log('length', length)
+  console.log('pictures', pictures)
+  // console.log('lengthPicturesArray', props.pictures.pictures)
+
   //définition l'action de la fléche next , quand on arrive au dernier on reviens à index 0
-  console.log("lengthPicturesArray", lengthPicturesArray);
   const nextPicture = () => {
-    setCurrentImg(currentImg === lengthPicturesArray - 1 ? 0 : currentImg + 1);
+    setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1);
   };
   //définition l'action de la fléche preview , quand on est à l'index 0 on repars à la fin du tableau
   const previewPicture = () => {
-    setCurrentImg(currentImg === 0 ? lengthPicturesArray - 1 : currentImg - 1); // on repart au dernier slide quand on est au premier
+    setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1); // on repart au dernier slide quand on est au premier
   };
 
   return (
     <div className="slide_picture">
       {/* Intégration des fléches pour next preview
     quand lengthPicturesArray est supérieur à 1 alors la fléche de gauche est visible */}
-      {lengthPicturesArray > 1 && (
+      {length > 1 && (
         <img
           src={vectorup}
           alt="fléche de gauche"
@@ -31,7 +31,7 @@ function Slide(props) {
           className="vectorPreview"
         />
       )}
-      {lengthPicturesArray > 1 && (
+      {length > 1 && (
         <img
           src={vectorup}
           alt="fléche de droite"
@@ -39,9 +39,7 @@ function Slide(props) {
           className="vectorNext"
         />
       )}
-      {/* {allPictures.map((Img, index) => ( */}
-      <img src={allPictures[currentImg]} alt={" "} />
-      {/* ))}{" "} */}
+      <img src={pictures[currentImg]} alt={" "} />
     </div>
   );
 }
