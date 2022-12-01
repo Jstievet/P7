@@ -4,12 +4,8 @@ import vectorup from "./../../asset/VectorUp.png";
 function Slide( { pictures }) {
   //définition de l'index de la premiere image à index 0
   const [currentImg, setCurrentImg] = useState(0);
-  const length = pictures.length;
   //définition du nombre d'image comprise dans pictures
-  console.log('length', length)
-  console.log('pictures', pictures)
-  // console.log('lengthPicturesArray', props.pictures.pictures)
-
+  const length = pictures.length;
   //définition l'action de la fléche next , quand on arrive au dernier on reviens à index 0
   const nextPicture = () => {
     setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1);
