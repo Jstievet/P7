@@ -251,4 +251,9 @@ footer img {
   padding: auto;
 }
 
+.vectorPreview {
+  background-color: #000000;
+  transform: rotate(0.75turn);
+}
+
 /*# sourceMappingURL=style.css.map */
