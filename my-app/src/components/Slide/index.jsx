@@ -4,12 +4,11 @@ import vectorup from "./../../asset/VectorUp.png";
 function Slide(props) {
   //définition de l'index de la premiere image à index 0
   const [currentImg, setCurrentImg] = useState(0);
-  const [allPictures, setAllPictures] = useState([]);
-  setAllPictures(props.pictures);
+  const appartementData = props;
   //définition du nombre d'image comprise dans pictures
-  const lengthPicturesArray = allPictures.length;
-  console.log("lengthpicturearray", lengthPicturesArray);
+  const lengthPicturesArray = appartementData.pictures.length;
   //définition l'action de la fléche next , quand on arrive au dernier on reviens à index 0
+  console.log("lengthPicturesArray", lengthPicturesArray);
   const nextPicture = () => {
     setCurrentImg(currentImg === lengthPicturesArray - 1 ? 0 : currentImg + 1);
   };
@@ -38,9 +37,7 @@ function Slide(props) {
           className="vectorNext"
         />
       )}
-      {/* {allPictures.map((Img, index) => ( */}
-      <img src={allPictures[currentImg]} alt={" "} />
-      {/* ))}{" "} */}
+      <img src={appartementData.pictures[currentImg]} alt={" "} />
     </div>
   );
 }

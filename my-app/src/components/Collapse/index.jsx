@@ -8,6 +8,7 @@ function Collapse(props) {
     setOPen(!open);
   };
   //collapse_individuel
+
   return (
     <section
       className={open ? "collapse_individuel_open" : "collapse_individuel"}

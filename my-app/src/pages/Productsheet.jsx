@@ -14,10 +14,10 @@ function Productsheet() {
       setAppartement(data);
     });
   }, [id]);
-  console.log("appartement", appartement);
+  console.log("appartement", appartement.pictures);
   return (
     <section className="ContainerSlide">
-      {/* <Slide pictures={appartement.pictures} /> */}
+      <Slide pictures={appartement} />
 
       <div className="Productsheet_Description">
         <Collapse title="Description" />
