@@ -14,7 +14,7 @@ function Productsheet() {
       setAppartement(data);
     });
   }, [id]);
-  console.log("appartement", appartement.pictures);
+  console.log("appartement", appartement);
   return (
     <section className="ContainerSlide">
       <Slide pictures={appartement} />
