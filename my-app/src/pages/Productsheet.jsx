@@ -1,29 +1,43 @@
 import Collapse from "../components/Collapse";
 import Slide from "../components/Slide";
+import ProductsheetComponent from "./../components/ProductsheetComponents";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDataById } from "./../API/index";
 
 function Productsheet() {
   const [appartement, setAppartement] = useState([]);
-  // const [pictures, setPictures] = useState([]);
-  const idLocation = useParams();
-  const id = idLocation.id;
+  const [pictures, setPictures] = useState([]);
+  const [description, setDescription] = useState();
+  const [equipments, setEquipments] = useState([]);
+  // const [appartementInfos, setappartementInfos] = useState([]);
+  const titleDescription = "Description";
+  const titleEquipments = "Equipements";
+
+  const { id } = useParams();
 
   useEffect(() => {
     getDataById(id).then((data) => {
+      // setappartementInfos(data);
+      setEquipments(data.equipments);
+      setDescription(data.description);
+      setPictures(data.pictures);
       setAppartement(data);
-      // setPictures(data.pictures);
     });
   }, [id]);
-  return (
-    <section className="ContainerSlide">
-      <Slide pictures={appartement} />
+  console.log("appartementInfos", appartement);
 
-      <div className="Productsheet_Description">
-        <Collapse title="Description" />
-        <Collapse title="Equipements" />
-      </div>
+  return (
+    <section className="container">
+      {pictures && <Slide pictures={pictures} />}
+      {appartement && <ProductsheetComponent appart={appartement} />}
+
+      {appartement && (
+        <div className="container_description">
+          <Collapse title={titleDescription} text={description} />
+          <Collapse title={titleEquipments} text={equipments} />
+        </div>
+      )}
     </section>
   );
 }
