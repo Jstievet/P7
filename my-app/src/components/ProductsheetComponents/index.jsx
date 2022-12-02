@@ -1,26 +1,33 @@
 function ProductsheetComponent({ appart }) {
   const { title, location, tags, host } = appart;
 
-  console.log("appart", host.picture);
+  console.log("title", title);
+  console.log("location", location);
+  console.log("tags", tags);
+  console.log("host", host);
   return (
     <div className="container_information">
       <div className="container_information_global">
         <div className="container_information_appartement">
-          <h1 className="container_information_appartement_title">{title}</h1>
+          {title && <h1 className="container_information_appartement_title">{title}</h1>}
+          
           <div className="container_information_appartement_location">
-            {location}
+            {location && location}
           </div>
         </div>
-        <div className="container_owner_rating">{host.name}</div>
-        <picture src={host.picture} alt="photo proprio "></picture>
+        {(host && host.name) && <div className="container_owner_rating">{host.name}</div>}
+        {(host && host.picture) && <picture src={host.picture} alt="photo proprio "></picture>}
+        
+        
       </div>
       <div>
         <div className="container_keyword">
-          <ul>
+          {tags && <ul>
             {tags.map((tag, index) => (
               <li key={`${index}-${Math.random()}`}>{tag}</li>
             ))}
-          </ul>
+          </ul>}
+          
         </div>
       </div>
     </div>

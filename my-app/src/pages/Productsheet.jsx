@@ -32,12 +32,10 @@ function Productsheet() {
       {pictures && <Slide pictures={pictures} />}
       {appartement && <ProductsheetComponent appart={appartement} />}
 
-      {appartement && (
-        <div className="container_description">
-          <Collapse title={titleDescription} text={description} />
-          <Collapse title={titleEquipments} text={equipments} />
-        </div>
-      )}
+      <div className="container_description">
+          {(appartement && titleDescription) && <Collapse title={titleDescription} text={description} />}
+          {(appartement && titleEquipments) && <Collapse title={titleEquipments} text={equipments} />}
+      </div>
     </section>
   );
 }
