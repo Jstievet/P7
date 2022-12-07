@@ -7,7 +7,9 @@ function Collapse(props) {
   const toggle = () => {
     setOPen(!open);
   };
-  //collapse_individuel
+
+  // //collapse_individuel
+
   return (
     <section
       className={open ? "collapse_individuel_open" : "collapse_individuel"}
@@ -22,8 +24,19 @@ function Collapse(props) {
           />
         </div>
       </div>
-      <div className="collapse_text">{text}</div>
+      <div className="collapse_text">
+        {typeof text === "object" ? (
+          <ul>
+            {text.map((li, index) => (
+              <li key={`${index}-${Math.random()}`}>{li}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{text}</p>
+        )}
+      </div>
     </section>
   );
 }
+
 export default Collapse;

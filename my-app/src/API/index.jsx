@@ -17,9 +17,8 @@ export async function getDataById(idLocation) {
   try {
     const data = await getData();
     const dataOne = data.find(({ id }) => id === idLocation);
-    console.log("dataOne", dataOne);
+
     if (dataOne) {
-      console.log("if dataOne", dataOne);
       return dataOne;
     } else {
       // TODO Lever une exception
