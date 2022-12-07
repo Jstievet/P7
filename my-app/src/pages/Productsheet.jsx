@@ -36,12 +36,14 @@ function Productsheet() {
       {appartement && <ProductsheetComponent appart={appartement} />}
 
       <div className="container_description">
+
         {appartement && titleDescription && (
           <Collapse title={titleDescription} text={description} />
         )}
         {appartement && titleEquipments && (
           <Collapse title={titleEquipments} text={equipments} />
         )}
+
       </div>
     </section>
   );
