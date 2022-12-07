@@ -1,0 +1,19 @@
+@mixin reset {
+  html,
+  body,
+  div,
+  h1,
+  h2,
+  p,
+  a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+  }
+}
+@mixin mobile-only {
+  @media screen and (max-width: 376px) {
+    @content;
+  }
+}

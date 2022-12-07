@@ -8,7 +8,9 @@ function Header() {
         @import
         url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100;300;400;700&display=swap');
       </style>
-      <img src={logo} className="App-logo" alt="logo" />
+      <NavLink to="/">
+        <img src={logo} className="App-logo" alt="logo" />
+      </NavLink>
       <nav>
         <NavLink to="/"> Accueil </NavLink>
         <NavLink to="/Apropos"> A Propos </NavLink>

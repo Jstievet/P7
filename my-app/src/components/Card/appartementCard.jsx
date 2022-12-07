@@ -5,12 +5,11 @@ import Card from "./index";
 export default function AppartementCard() {
   const [appartementSheet, setAppartementSheet] = useState([]);
   useEffect(() => {
-    getData().then((data) => {
+    getData("/logements.json").then((data) => {
       setAppartementSheet(data);
     });
   }, []);
 
-  console.log(appartementSheet);
   return (
     <div className="AllCard">
       {appartementSheet.map((sheet, index) => (

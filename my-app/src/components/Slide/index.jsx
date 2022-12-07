@@ -38,7 +38,17 @@ function Slide({ pictures }) {
             className="vectorNext"
           />
         )}
-        <img src={pictures[currentImg]} alt={" "} />
+        <img
+          className="imageSlide"
+          src={pictures[currentImg]}
+          alt="Photo Appartements"
+        />
+
+        {lengthPicturesArray > 1 && (
+          <div className="imageSlide_index">
+            {currentImg + 1} / {lengthPicturesArray}
+          </div>
+        )}
       </div>
     </div>
   );

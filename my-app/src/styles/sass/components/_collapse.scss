@@ -1,0 +1,156 @@
+.collapse {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  //page A propos Collapse
+  &_about {
+    max-width: 1225px;
+    min-height: 460px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+
+    & .collapse_individuel {
+      width: 90%;
+      margin: 10px;
+      &_open {
+        width: 90%;
+
+        & .collapse_text {
+          // animation-duration: 1s;
+          // animation-name: openCollapse;
+          overflow: hidden;
+          width: 98%;
+          margin-bottom: 0px;
+          padding: 15px 10px 5px 10px;
+        }
+      }
+      & .collapse_text {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  // @keyframes openCollapse {
+  //   from {
+  //     height: 0px;
+  //   }
+
+  //   to {
+  //     height: fit-content;
+  //   }
+  // }
+  //fin des collapse pour la page à propos
+  //collapse page productsheet
+  &_button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+
+    height: 35px;
+    background-color: $primary-color;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_individuel {
+    height: auto;
+    width: 45%;
+    color: #ffffff;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &_open {
+      width: 45%;
+      color: #ffffff;
+
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 15px;
+      & .collapse_text {
+        width: 98%;
+        visibility: visible;
+        font-size: 18px;
+        height: fit-content;
+        border-radius: 0px 0px 10px 10px;
+
+        padding: 15px 0px 5px 10px;
+        line-height: 30px;
+        background-color: rgb(246, 234, 234);
+      }
+    }
+  }
+  &_text {
+    color: $primary-color;
+    transition: height 5s;
+    font-size: 0px;
+    height: 0;
+    margin-bottom: 60px;
+
+    & ul {
+      margin-top: 0;
+      padding-left: 10px;
+      list-style-type: none;
+    }
+  }
+}
+
+.vector {
+  margin-right: 1%;
+  margin-top: 1%;
+
+  &_up {
+    padding: auto;
+    transform: rotate(0.5turn);
+    transition: all 1s;
+  }
+  &_down {
+    transition: all 1s;
+    padding: auto;
+  }
+}
+@include mobile-only {
+  .collapse {
+    &_individuel {
+      & .collapse_text {
+        margin-bottom: 30px;
+      }
+      width: 90%;
+      margin-top: 10px;
+      &_open {
+        width: 90%;
+        margin-top: 10px;
+        & .collapse_text {
+          margin-bottom: 25px;
+          width: 96%;
+          padding: 10px 0px 5px 10px;
+        }
+      }
+    }
+  }
+  //collapse format portable pour la page apropos
+  .collapse {
+    //page A propos Collapse
+    &_about {
+      & .collapse_individuel {
+        width: 90%;
+        margin: 10px;
+        &_open {
+          width: 90%;
+
+          & .collapse_text {
+            width: 94%;
+          }
+        }
+      }
+    }
+  }
+}
