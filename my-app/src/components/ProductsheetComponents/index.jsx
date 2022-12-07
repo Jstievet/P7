@@ -4,16 +4,13 @@ import starRed from "./../../asset/starRed.png";
 function ProductsheetComponent({ appart }) {
   const { title, location, tags, host, rating } = appart;
 
-
   return (
     <div className="container_information">
       <div className="container_information_global">
         <div className="container_information_appartement">
-
           {title && (
             <h1 className="container_information_appartement_title">{title}</h1>
           )}
-
 
           <div className="container_information_appartement_location">
             {location && location}
@@ -28,7 +25,6 @@ function ProductsheetComponent({ appart }) {
             </div>
           )}
         </div>
-
       </div>
       <div>
         <div className="container_information_star_owner">
@@ -74,18 +70,6 @@ function ProductsheetComponent({ appart }) {
               <img src={host.picture} alt="photo propriétaire"></img>
             )}
           </div>
-
-        
-      </div>
-      <div>
-        <div className="container_keyword">
-          {tags && <ul>
-            {tags.map((tag, index) => (
-              <li key={`${index}-${Math.random()}`}>{tag}</li>
-            ))}
-          </ul>}
-          
-
         </div>
       </div>
     </div>
