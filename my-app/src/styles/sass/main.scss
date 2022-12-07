@@ -1,28 +1,29 @@
-body {
-  font-family: "Montserrat", sans-serif;
-}
-// HEADER //
-header {
-  display: flex;
-  justify-content: space-between;
-  height: 70px;
+@import "./utils/mixin";
+@import "./utils/variable";
+@import "./components/collapse";
+@import "./components/header";
+@import "./components/card";
+@import "./components/footer";
+@import "./pages/apropos";
+@import "./pages/error";
+@import "./pages/productsheet";
+@import "./components/banner";
+@include reset;
 
-  padding-top: 25px;
-  margin: auto;
-  width: 90%;
-  max-width: 1225px;
+body {
+  max-width: 100%;
+  max-height: fit-content;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  min-height: fit-content;
 }
-header img {
-  height: 70%;
-}
-// HEADER NAV //
-nav {
-  font-size: large;
-  min-width: 150px;
+#root {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
 }
+
 // MAIN //
 .App {
   margin: auto;
@@ -30,291 +31,9 @@ nav {
   width: 90%;
   height: 223px;
 }
-.container-banner {
-  border-radius: 25px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1230px;
-  height: 100%;
-  margin: auto;
-}
-.banner {
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  filter: brightness(50%);
-}
-.bannerText {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  color: rgb(255, 255, 255);
-}
-// CARD APPARTEMENT HOME //
 
-.AllCard {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.AppartementCard {
-  width: 340px;
-  height: 340px;
-  overflow: hidden;
-  margin-bottom: 25px;
-  display: flex;
-  position: relative;
-  border-radius: 10px;
-  &_title {
-    color: rgb(255, 255, 255);
-    align-items: center;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 45%;
-    z-index: 3;
-  }
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(#ffffff 0%, #000000 50%);
-    opacity: 0.5;
-    content: " ";
-  }
-}
-.AppartementCard img {
-  width: 100%;
-
-  object-fit: cover;
-}
-footer {
-  margin-top: 25px;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-footer p {
-  color: white;
-}
-footer img {
-  width: 122px;
-  filter: brightness(10);
-  padding-top: 25px;
-}
-@media screen and (max-width: 376px) {
-  .bannerText {
-    font-size: 24px;
-  }
-  .AppartementCard {
-    width: 335px;
-    height: 255px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    &__title {
-      color: black;
-      z-index: 0;
-    }
-  }
-}
-//PAGE A PROPOS
-.collapse {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-
-  & button {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-    background-color: #ff6060;
-    color: white;
-    font-size: 20px;
-    margin: 10px;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  &_individuel {
-    width: 100%;
-  }
-  &_text {
-    padding: 10px;
-    margin-left: 15px;
-    background-color: beige;
-    color: #ff6060;
-    font-size: 25px;
-  }
-  // &_button {
-  // }
-}
-//PAGE ERROR//
-.error {
-  color: #ff6060;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  &_number {
-    font-size: 150px;
-    font-weight: bolder;
-    margin-bottom: 25px;
-  }
-  &_text {
-    font-size: 50px;
-  }
-}
 //PAGE CAROUSEL DESCRIPTION APPARTEMENT//
 .collapse {
   margin-top: 25px;
   width: 60%;
-}
-.Productsheet_Description {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.collapse_individuel {
-  width: 40%;
-  margin-right: auto;
-  color: #ffffff;
-  &_open {
-    width: 40%;
-    margin-right: auto;
-    color: #ffffff;
-    & .collapse_text {
-      width: 100%;
-      visibility: visible;
-      font-size: 25px;
-      transition: height 1s;
-      height: fit-content;
-      margin-bottom: 15px;
-      border-radius: 0px 0px 10px 10px;
-      margin-top: 0;
-      padding-left: 15px;
-    }
-  }
-}
-.collapse_text {
-  width: 100%;
-  transition: height 5s;
-  padding: 0;
-  font-size: 0px;
-  margin: 0;
-  margin-top: 15px;
-  height: 0px;
-  list-style-type: none;
-  background-color: rgb(246, 234, 234);
-}
-.collapse_button {
-  background-color: #ff6060;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  height: 35px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20px;
-}
-.vector {
-  margin-right: 1%;
-  margin-top: 1%;
-
-  &_down {
-    padding: auto;
-    transform: rotate(0.5turn);
-    transition: all 1s;
-  }
-  &_up {
-    transition: all 1s;
-    padding: auto;
-  }
-}
-.vectorPreview {
-  background-color: #000000;
-  position: relative;
-  transform: rotate(0.75turn);
-}
-
-//page Productsheet
-.container {
-  margin-left: 100px;
-  &_information {
-    display: flex;
-    flex-direction: column;
-    &_global {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    &_appartement {
-      color: #ff6060;
-
-      &_title {
-        font-size: 36px;
-      }
-    }
-  }
-  &_slide {
-    max-width: 1240px;
-    height: 415px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    max-width: 1225px;
-  }
-  &_picture {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    object-fit: cover;
-  }
-
-  &_keyword ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    & li {
-      text-align: center;
-      margin-right: 15px;
-      border-radius: 15px;
-      background-color: #ff6060;
-      color: #ffffff;
-      padding: 5px;
-      width: 150px;
-    }
-  }
-  &_description {
-    width: 80%;
-    display: flex;
-  }
-}
-.productsheet_description {
-  margin-top: 50px;
 }

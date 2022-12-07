@@ -7,26 +7,23 @@ import Home from './pages/Home';
 import Productsheet from './pages/Productsheet'
 import Apropos from './pages/Apropos'
 import Error from './components/Error';
-// import Layout from './components/Layout/index'
+import Layout from './components/Layout/index';
 import reportWebVitals from './reportWebVitals';
-import Header from './components/Header'
-import Footer from './components/Footer'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Header />
       <Routes>
-        {/* <Route path='/' element={<Layout />} > */}
-        <Route path="/" element={<Home />} />
-        <Route path="/Apropos" element={<Apropos />} />
-        <Route path="*" element={<Error />} />
-        <Route path="/Productsheet/:id" element={<Productsheet />} />
-        {/* </Route> */}
+        <Route path='/' element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="Apropos" element={<Apropos />} />
+          <Route path="Productsheet/:id" element={<Productsheet />} />
+          <Route path="*" element={<Error />} />
+        </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

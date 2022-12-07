@@ -1,8 +1,6 @@
-export async function getData() {
+export async function getData(url) {
   try {
-    // le json = logement.json différent de logements.json
-    // le json = postionement du fichier dans le dossier Public
-    const response = await fetch("/logements.json");
+    const response = await fetch(url);
     if (response.ok) {
       return await response.json();
     } else {
@@ -12,18 +10,17 @@ export async function getData() {
     console.error(error);
   }
 }
-// TODO Init getData and find by id
+
 export async function getDataById(idLocation) {
   try {
-    const data = await getData();
+    const data = await getData("/logements.json");
     const dataOne = data.find(({ id }) => id === idLocation);
 
     if (dataOne) {
       return dataOne;
     } else {
-      // TODO Lever une exception
     }
   } catch (error) {
-    // console.error(error);
+    console.error(error);
   }
 }
